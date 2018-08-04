@@ -5,11 +5,12 @@ var LinkedList = function() {
 
   list.addToTail = function(value) {
     var tailNode = new Node(value);
+    if (this.tail) {
+      this.tail.next = tailNode;
+    }
     this.tail = tailNode;
     if (!this.head) {
       this.head = tailNode;
-    } else {
-      this.head.next = tailNode;
     }
   };
 

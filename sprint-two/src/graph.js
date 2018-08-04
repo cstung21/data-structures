@@ -65,12 +65,24 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
   for (var key in this.storage) {
-    cb(this.storage[key])
+    cb(this.storage[key].value)
   }
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ *
+ *addNode: constant
+ *contains: linear
+ *removeNode: linear
+ *hasEdge: linear
+ *addEdge: constant
+ *removeEdge: linear
+ *forEachNode: linear
+ *
  */
+ 
+ 
+ 
 
 

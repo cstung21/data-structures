@@ -1,20 +1,29 @@
 var Set = function() {
   var set = Object.create(setPrototype);
-  set._storage = null; // fix me
+  set._storage = {}; // fix me
   return set;
 };
 
 var setPrototype = {};
 
 setPrototype.add = function(item) {
+  this._storage[item] = item;
+  console.log(this._storage);
 };
 
 setPrototype.contains = function(item) {
+  return this._storage.hasOwnProperty(item);
 };
 
 setPrototype.remove = function(item) {
+  if(this.contains(item)) {
+    delete this._storage[item];
+  }
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ add: constant,
+ contains: linear,
+ remove: linear
  */
